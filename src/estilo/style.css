@@ -1,0 +1,381 @@
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+:root{
+    --cor1: #fff1e5;
+    --cor2: #D0323E;
+    --cor3: #770D3E;
+    --cor4: #280E3E;
+    --cor5: #E21965;
+    --cor6: #43CFE8;
+}
+
+header{
+    background: var(--cor5);
+    color: var(--cor1);
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    box-shadow: 0 3px 15px rgb(0, 0, 0, .2);
+    padding: 1rem;
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav span{
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
+nav ul{
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    padding: 1rem 2rem;
+    top: 5.3rem;
+    left: 0;
+    width: 100%;
+    background: var(--cor5);
+    gap: 10px;
+    list-style: none;
+    height: 0;
+    transition: .2s;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.active ul{
+    height: 100vh;
+    visibility: visible;
+    overflow: auto;
+}
+
+nav a{
+    color: var(--cor1);
+    font-size: 1.5rem;
+    font-weight: 500;
+    display: block;
+    width: 70%;
+    padding: 10px;
+    border-bottom: 1px solid rgb(17, 17, 17, .1);
+    border-radius: 9px;
+    transition: background .2s,
+                color .2s;
+}
+
+nav a:hover{
+    border-radius: 7px;
+    background: var(--cor1);
+    color: var(--cor5);
+}
+
+nav button{
+    width: 3em; height: 2rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+}
+
+button .menu-hamburguer{
+    width: 100%;
+    border-top: 4px solid var(--cor1);
+}
+
+button .menu-hamburguer::after, button .menu-hamburguer::before{
+    content: " ";
+    display: block;
+    margin-top: 6px;
+    width: 100%;
+    border-bottom: 4px solid var(--cor1);
+    transition: .2s;
+}
+
+.active .menu-hamburguer{
+    border-top-color: transparent;
+}
+
+.active .menu-hamburguer::before{
+    transform: rotate(130deg);
+}
+
+.active .menu-hamburguer::after{
+    position: relative;
+    top: -9px;
+    transform: rotate(-130deg);
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+}
+
+.headline-container{
+    background: url("../img/wallpaper.webp") no-repeat left top/cover fixed;
+    height: 100%;
+    width: 100%;
+    padding-top: 5.4rem;
+    position: relative;
+    display: flex;
+}
+
+.headline-box{
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.headline-text{
+    color: var(--cor1);
+    font-size: 2rem;
+    padding: 0 1rem;
+}
+
+.mini-text{
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: var(--cor6);
+    font-weight: 900;
+    text-shadow: 3px 3px var(--cor4);
+}
+
+.headline-text h1{
+    color: var(--cor1);
+    text-shadow: 2px 2px var(--cor6),
+                4px 4px var(--cor2),
+                0 0 10px rgb(0, 0, 0, .5);
+    font-size: 2.5rem;
+}
+
+.headline-text p{
+    font-size: 1.5rem;
+    opacity: .8;
+    text-shadow: 0 0 10px rgb(0, 0, 0, .8);
+}
+
+.headline-img-bola{
+    background: var(--cor2);
+    height: 20rem; width: 20rem;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 15px rgb(0, 0, 0, .5);
+}
+
+.headline-img-bola a{
+    width: 200px;
+    height: 40px;
+    border-radius: 7px;
+    border: none;
+    background: var(--cor6);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0px 4px 15px rgb(0, 0, 0, .6);
+    color: var(--cor4);
+    font-weight: 700;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s;
+}
+
+.headline-img-bola a:hover{
+    background: var(--cor4);
+    color: var(--cor6);
+    height: 50px;
+    width: 210px;
+    transform: translateY(-5px)
+}
+
+
+.png-da-bola{
+    width: 100%;
+    height: 110%;
+    background: url("../img/aranha-png.png") no-repeat center/contain;
+    position: absolute;
+    right: 3rem;
+    bottom: -2rem;
+}
+
+.sobre-o-filme{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    background: var(--cor4);
+
+}
+
+.sobre-o-filme .capa h2{
+    background: linear-gradient(90deg, var(--cor5), transparent);
+    color: var(--cor1);
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin: 10px 0;
+    width: 240px;
+    text-align: center;
+    padding: 6px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobre-o-filme .capa img{
+    height: 400px;
+    border: 1.5px solid var(--cor5);
+   }
+
+.sobre-o-filme .sobre h3{
+    color: var(--cor1);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-shadow: 2px 2px var(--cor6),
+                 4px 4px var(--cor5),
+                 0px 0px 10px rgba(0, 0, 0, .4);
+   }
+
+.sobre-o-filme .sobre p{
+    text-align: justify;
+    color: var(--cor1);
+    font-weight: 500;
+    margin: 5px;
+   }
+
+footer{
+    background-color: var(--cor4);
+    padding: 2rem 0 ;
+    display: block;
+    margin-top: 100vh;
+    text-align: center;
+    color: var(--cor1);
+}
+
+footer strong{
+    color: var(--cor5);
+}
+
+@media (min-width: 800px) {
+
+    *{
+        transition: .2s;
+    }
+
+    header button{
+        display: none;
+    }
+
+    nav ul{
+        top: 2rem;
+        display: inline;
+        height: auto;
+        width: auto;
+        margin-left: 50%;
+        background: transparent;
+        padding: 0;
+        visibility: visible;
+    }
+
+    nav li{
+        display: inline;
+    }
+
+    nav a{
+        display: inline;
+        font-size: 1.6rem;
+        width: auto;
+        border: none;
+    }
+
+    .headline-container .headline-text h1{
+        font-size: 3.4rem;
+    }
+
+    .headline-container .headline-img-bola{
+        width: 27rem; height: 27rem;
+    }
+    .sobre-o-filme{
+        justify-content: space-around;
+    }
+
+    .sobre-o-filme .capa h2{
+        margin-top: 5rem;
+        font-size: 2rem;
+        width: 400px;
+    }
+
+    .sobre-o-filme .capa img{
+        display: block;
+        margin: 0 auto;
+        height: 32rem;
+    }
+
+    .sobre-o-filme .sobre h3{
+        font-size: 3rem;
+    }
+
+    .sobre-o-filme .sobre p{
+        width: 700px;
+    }
+
+    footer{
+        margin-top: 100vh;
+    }
+}
+
+@media (min-width: 1300px) {
+
+    .headline-box{
+        flex-flow: row;
+    }
+
+    .sobre-o-filme{
+        flex-flow: row;
+    }
+}
+
+@media (min-width: 1600px){
+    .headline-container .headline-text h1{
+        font-size: 5rem;
+    }
+
+    .headline-container .headline-text p{
+        font-size: 2.4rem;
+        text-shadow: 0, 0, 10px rgb(0, 0, 0);
+    }
+
+    .headline-container img{
+        height: 40rem; width: 40rem;
+    }
+
+    .headline-container .headline-img-bola{
+        height: 40rem; width: 40rem;
+    }
+
+    .sobre-o-filme .sobre p{
+        font-size: 1.5rem;
+        width: 900px;
+    }
+}
